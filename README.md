@@ -1,3 +1,3 @@
 # code-snippits-kotlin
 
-small code junks to help overcomes these problems..
+small code junks to help overcome some problems in kotlin..
